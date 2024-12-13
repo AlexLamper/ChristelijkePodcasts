@@ -1,10 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
+"use client";
+
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 interface PodcastCardProps {
-  title: string
-  author: string
-  imageUrl: string
+  title: string;
+  author: string;
+  imageUrl: string;
 }
 
 const PodcastCard = ({ title, author, imageUrl }: PodcastCardProps) => {
@@ -24,8 +26,7 @@ const PodcastCard = ({ title, author, imageUrl }: PodcastCardProps) => {
         <p className="text-xs md:text-sm text-gray-400 truncate">{author}</p>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default PodcastCard
-
+export default PodcastCard;

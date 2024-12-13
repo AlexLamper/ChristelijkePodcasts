@@ -1,29 +1,60 @@
-import PodcastCard from "@/components/PodcastCard"
+'use client';
 
-const podcasts = [
-  { id: 1, title: "Tech Talk", author: "Jane Doe", imageUrl: "/placeholder.svg?height=400&width=400" },
-  { id: 2, title: "Science Hour", author: "John Smith", imageUrl: "/placeholder.svg?height=400&width=400" },
-  { id: 3, title: "History Unveiled", author: "Emma Wilson", imageUrl: "/placeholder.svg?height=400&width=400" },
-  { id: 4, title: "Comedy Central", author: "Mike Johnson", imageUrl: "/placeholder.svg?height=400&width=400" },
-  { id: 5, title: "True Crime Stories", author: "Sarah Brown", imageUrl: "/placeholder.svg?height=400&width=400" },
-  { id: 6, title: "Mindfulness Meditation", author: "David Lee", imageUrl: "/placeholder.svg?height=400&width=400" },
-]
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-export default function Home() {
+const Home = () => {
+  interface PodcastShow {
+    id: string;
+    name: string;
+    images: { url: string }[];
+  }
+
+  const [shows, setShows] = useState<PodcastShow[]>([]);
+  const market = 'US';  // ISO 3166-1 alpha-2 country code
+
+  useEffect(() => {
+    const fetchPodcastShows = async () => {
+      try {
+        const res = await fetch(`/api/podcast_shows?market=${market}`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch podcast shows');
+        }
+        const data = await res.json();
+        setShows(data.shows);
+      } catch (error) {
+        console.error('Error fetching podcast shows:', error);
+      }
+    };
+
+    fetchPodcastShows();
+  }, [market]);
+
   return (
-    <div className="p-4 md:p-6">
-      <h2 className="text-2xl font-bold mb-6">Populaire Podcasts</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
-        {podcasts.map((podcast) => (
-          <PodcastCard
-            key={podcast.id}
-            title={podcast.title}
-            author={podcast.author}
-            imageUrl={podcast.imageUrl}
-          />
-        ))}
+    <div className="container mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-4">Christian Podcasts</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {shows.length > 0 ? (
+          shows.map((show) => (
+            <div key={show.id} className="shadow-lg rounded-lg overflow-hidden">
+              <Image
+                src={show.images[0]?.url || ''}
+                alt={show.name}
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-lg font-semibold">{show.name}</h2>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Loading podcasts...</p>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
+export default Home;
