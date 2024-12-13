@@ -46,7 +46,9 @@ ChristelijkePodcasts maakt gebruik van moderne technologieën voor een optimale 
 
 ## 🌐 API
 
-ChristelijkePodcasts gebruikt API's om gegevens van podcasts en gerelateerde inhoud te fetchen, wat zorgt voor een up-to-date en gevarieerd aanbod. Voor meer informatie over beschikbare data, raadpleeg de [API-bron](https://rapidapi.com/ajith/api/holy-bible).
+ChristelijkePodcasts gebruikt API's om gegevens van podcasts en gerelateerde inhoud te fetchen, wat zorgt voor een up-to-date en gevarieerd aanbod.
+De belangrijkste API die ChristelijkePodcasts gebruikt is de [Spotify WebAPI](https://developer.spotify.com/documentation/web-api). Met behulp van deze API worden alle podcasts gefetched waarna vervolgens weergegeven op het startscherm en andere pagina's.
+Daarnaast gebruikt ChristelijkePodcasts ook [Bijbel API](https://rapidapi.com/ajith/api/holy-bible). om de bijbeltekst op het startscherm te fetchen en weer te geven.
 
 ## 🤝 Bijdragen
 
@@ -75,11 +77,8 @@ Huidige Versie: **v1.0**
 **Q: Is ChristelijkePodcasts gratis te gebruiken?**  
 A: Ja! ChristelijkePodcasts is gratis voor iedereen. Premium-functies kunnen in de toekomst worden toegevoegd.
 
-**Q: Welke podcast-platformen worden ondersteund?**  
-A: ChristelijkePodcasts ondersteunt meerdere populaire podcastplatformen met een breed scala aan shows.
-
 **Q: Hoe meld ik een bug of doe ik een suggestie?**  
-A: Open een issue op onze GitHub- repository met details van je suggestie of bugrapport.
+A: Open een issue op onze GitHub- repository met details van je suggestie/bugrapport, of stuur een mail naar [devlamper06@gmail.com](mailto:devlamper06@gmail.com).
 
 ## 📬 Contact
 
