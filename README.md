@@ -1,6 +1,6 @@
 # 📖 ChristelijkePodcasts
 
-Bedankt voor het bekijken van **ChristelijkePodcasts** – Jouw Simpele Platform voor Christelijke Podcasts.
+Bedankt voor het bekijken van **ChristelijkePodcasts** – Jouw Platform voor Christelijke Podcasts.
 
 ## Over ChristelijkePodcasts
 
