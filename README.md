@@ -4,7 +4,7 @@ Bedankt voor het bekijken van [**ChristelijkePodcasts**](https://www.christelijk
 
 ## Over ChristelijkePodcasts
 
-ChristelijkePodcasts is een eenvoudige web-gebaseerde applicatie ontworpen om gebruikers een verzameling van christelijke podcasts te tonen. Of je nu nieuw bent in de wereld van christelijke podcasts of al langer geïnteresseerd bent, ChristelijkePodcasts biedt een gebruiksvriendelijke ervaring met toegang tot verschillende shows en onderwerpen.
+ChristelijkePodcasts is een eenvoudige web-gebaseerde applicatie ontworpen om gebruikers een verzameling van christelijke podcasts te tonen. Of je nu nieuw bent in de wereld van christelijke podcasts of al langer geïnteresseerd bent, ChristelijkePodcasts biedt een gebruiksvriendelijke ervaring met toegang tot verschillende shows en onderwerpen. De site is te bezoeken via: https://www.christelijkepodcasts.com/
 
 ## 📜 Inhoudsopgave
 
@@ -75,7 +75,7 @@ Huidige Versie: **v1.0**
 ## ❓ FAQ
 
 **Q: Is ChristelijkePodcasts gratis te gebruiken?**  
-A: Ja! ChristelijkePodcasts is gratis voor iedereen. Premium-functies kunnen in de toekomst worden toegevoegd.
+A: Ja! ChristelijkePodcasts is gratis voor iedereen. Premium-functies kunnen in de toekomst worden toegevoegd. 
 
 **Q: Hoe meld ik een bug of doe ik een suggestie?**  
 A: Open een issue op onze GitHub- repository met details van je suggestie/bugrapport, of stuur een mail naar [devlamper06@gmail.com](mailto:devlamper06@gmail.com).
