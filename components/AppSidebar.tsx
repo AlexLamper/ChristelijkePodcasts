@@ -18,7 +18,9 @@ export function AppSidebar() {
     <Sidebar className="bg-black">
       <SidebarHeader>
         <div className="p-6">
-          <h1 className="text-3xl font-bold text-green-500">Christelijke</h1>
+          <Link href={"/"}>
+            <h1 className="text-3xl font-bold text-green-500">Christelijke</h1>
+          </Link>
           <p className="text-sm text-gray-400">Podcasts</p>
         </div>
       </SidebarHeader>
