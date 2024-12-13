@@ -1,27 +1,27 @@
 # 📖 ChristelijkePodcasts
 
-Thanks for checking out **ChristelijkePodcasts** – Your Simple Platform for Christian Podcasts.
+Bedankt voor het bekijken van **ChristelijkePodcasts** – Jouw Simpele Platform voor Christelijke Podcasts.
 
-## About ChristelijkePodcasts
+## Over ChristelijkePodcasts
 
 ChristelijkePodcasts is een eenvoudige web-gebaseerde applicatie ontworpen om gebruikers een verzameling van christelijke podcasts te tonen. Of je nu nieuw bent in de wereld van christelijke podcasts of al langer geïnteresseerd bent, ChristelijkePodcasts biedt een gebruiksvriendelijke ervaring met toegang tot verschillende shows en onderwerpen.
 
-## 📜 Table of Contents
+## 📜 Inhoudsopgave
 
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
-3. [Pages](#pages)
+3. [Pagina's](#pagina's)
 4. [API](#api)
-5. [Contributing](#contributing)
-6. [Support](#support)
-7. [License](#license)
-8. [Version](#version)
+5. [Bijdragen](#bijdragen)
+6. [Ondersteuning](#ondersteuning)
+7. [Licentie](#licentie)
+8. [Versie](#versie)
 9. [FAQ](#faq)
 10. [Contact](#contact)
 
 ## 🌟 Features
 
-- **Podcast Discovery**: Ontdek een breed scala aan christelijke podcasts gesorteerd op verschillende categorieën en onderwerpen.
+- **Podcast Ontdekking**: Ontdek een breed scala aan christelijke podcasts gesorteerd op verschillende categorieën en onderwerpen.
 - **Favorieten**: Bewaar favoriete podcasts voor eenvoudig toegang en luisteren.
 - **Podcast Details**: Bekijk gedetailleerde informatie over afleveringen, inclusief afspeellijsten en release data.
 - **Trending Podcasts**: Toont populaire en trending christelijke podcasts op basis van gebruikersinteractie.
@@ -37,7 +37,7 @@ ChristelijkePodcasts maakt gebruik van moderne technologieën voor een optimale 
 - **TailwindCSS**: Utility-first CSS-framework voor snelle, consistente styling.
 - **ShadCN**: UI-stylingbibliotheek voor modulaire en toegankelijke componenten, wat zorgt voor een samenhangend ontwerp.
 
-## 📄 Pages
+## 📄 Pagina's
 
 - **Home**: De hoofdpagina die een overzicht biedt van populaire en aanbevolen christelijke podcasts.
 - **Categorieën**: Bekijk podcasts op basis van verschillende onderwerpen zoals onderwijs, aanbidding en bijbelstudie.
@@ -51,7 +51,7 @@ ChristelijkePodcasts maakt gebruik van moderne technologieën voor een optimale 
 
 ChristelijkePodcasts gebruikt API's om gegevens van podcasts en gerelateerde inhoud te fetchen, wat zorgt voor een up-to-date en gevarieerd aanbod. Voor meer informatie over beschikbare data, raadpleeg de [API-bron](https://rapidapi.com/ajith/api/holy-bible).
 
-## 🤝 Contributing
+## 🤝 Bijdragen
 
 ChristelijkePodcasts is een open-source project en bijdrages zijn welkom! Hier is hoe je kunt bijdragen:
 
@@ -61,15 +61,15 @@ ChristelijkePodcasts is een open-source project en bijdrages zijn welkom! Hier i
 
 Elke bijdrage helpt om ChristelijkePodcasts beter te maken voor iedereen! 🎉
 
-## ❤️ Support
+## ❤️ Ondersteuning
 
 Als je dit project wilt ondersteunen, wordt het delen van ChristelijkePodcasts met anderen of het bijdragen aan de ontwikkeling zeer gewaardeerd!
 
-## 📄 License
+## 📄 Licentie
 
-Dit project is gelicentieerd onder de [MIT License](LICENSE), waardoor hergebruik en aanpassingen met naamsvermelding mogelijk zijn.
+Dit project is gelicentieerd onder de [MIT Licentie](LICENSE), waardoor hergebruik en aanpassingen met naamsvermelding mogelijk zijn.
 
-## 📌 Version
+## 📌 Versie
 
 Huidige Versie: **v1.0**
 
