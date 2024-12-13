@@ -13,6 +13,9 @@ module.exports = {
     			md: 'calc(var(--radius) - 2px)',
     			sm: 'calc(var(--radius) - 4px)'
     		},
+			animation: {
+				'scale-102': 'scale-102 0.2s ease-in-out',
+			},
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
