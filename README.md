@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📖 ChristelijkePodcasts
 
-## Getting Started
+Thanks for checking out **ChristelijkePodcasts** – Your Simple Platform for Christian Podcasts.
 
-First, run the development server:
+## About ChristelijkePodcasts
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ChristelijkePodcasts is een eenvoudige web-gebaseerde applicatie ontworpen om gebruikers een verzameling van christelijke podcasts te tonen. Of je nu nieuw bent in de wereld van christelijke podcasts of al langer geïnteresseerd bent, ChristelijkePodcasts biedt een gebruiksvriendelijke ervaring met toegang tot verschillende shows en onderwerpen.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 Table of Contents
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Pages](#pages)
+4. [API](#api)
+5. [Contributing](#contributing)
+6. [Support](#support)
+7. [License](#license)
+8. [Version](#version)
+9. [FAQ](#faq)
+10. [Contact](#contact)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌟 Features
 
-## Learn More
+- **Podcast Discovery**: Ontdek een breed scala aan christelijke podcasts gesorteerd op verschillende categorieën en onderwerpen.
+- **Favorieten**: Bewaar favoriete podcasts voor eenvoudig toegang en luisteren.
+- **Podcast Details**: Bekijk gedetailleerde informatie over afleveringen, inclusief afspeellijsten en release data.
+- **Trending Podcasts**: Toont populaire en trending christelijke podcasts op basis van gebruikersinteractie.
+- **Filters en Zoeken**: Gebruik filters zoals categorieën, spreker en duur om je ideale podcasts te vinden.
+- **Community**: Deel en bespreek favoriete afleveringen met andere gebruikers.
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ChristelijkePodcasts maakt gebruik van moderne technologieën voor een optimale prestatie en gebruikerservaring:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js (TypeScript)**: Hoofdkader voor het bouwen van de app, ondersteund door server-side rendering en statische site generatie.
+- **Vercel**: Hosting- en deployplatform geoptimaliseerd voor Next.js-applicaties.
+- **TailwindCSS**: Utility-first CSS-framework voor snelle, consistente styling.
+- **ShadCN**: UI-stylingbibliotheek voor modulaire en toegankelijke componenten, wat zorgt voor een samenhangend ontwerp.
 
-## Deploy on Vercel
+## 📄 Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Home**: De hoofdpagina die een overzicht biedt van populaire en aanbevolen christelijke podcasts.
+- **Categorieën**: Bekijk podcasts op basis van verschillende onderwerpen zoals onderwijs, aanbidding en bijbelstudie.
+- **Trending**: Bekijk de meest populaire podcasts van dit moment.
+- **Favorieten**: Toegang tot je opgeslagen favoriete podcasts.
+- **Zoeken**: Vind eenvoudig specifieke afleveringen of shows door gebruik te maken van zoek- en filteropties.
+- **Instellingen**: Beheer je gebruikersvoorkeuren en accountinstellingen.
+- **Help/FAQ**: Toegang tot veelgestelde vragen en ondersteuningsbronnen.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 API
+
+ChristelijkePodcasts gebruikt API's om gegevens van podcasts en gerelateerde inhoud te fetchen, wat zorgt voor een up-to-date en gevarieerd aanbod. Voor meer informatie over beschikbare data, raadpleeg de [API-bron](https://rapidapi.com/ajith/api/holy-bible).
+
+## 🤝 Contributing
+
+ChristelijkePodcasts is een open-source project en bijdrages zijn welkom! Hier is hoe je kunt bijdragen:
+
+1. **Fork de repository** en maak een nieuwe branch.
+2. **Maak je wijzigingen** en voeg beschrijvende commit-berichten toe.
+3. **Stuur een pull request** met details van je verbeteringen of bugfixes.
+
+Elke bijdrage helpt om ChristelijkePodcasts beter te maken voor iedereen! 🎉
+
+## ❤️ Support
+
+Als je dit project wilt ondersteunen, wordt het delen van ChristelijkePodcasts met anderen of het bijdragen aan de ontwikkeling zeer gewaardeerd!
+
+## 📄 License
+
+Dit project is gelicentieerd onder de [MIT License](LICENSE), waardoor hergebruik en aanpassingen met naamsvermelding mogelijk zijn.
+
+## 📌 Version
+
+Huidige Versie: **v1.0**
+
+## ❓ FAQ
+
+**Q: Is ChristelijkePodcasts gratis te gebruiken?**  
+A: Ja! ChristelijkePodcasts is gratis voor iedereen. Premium-functies kunnen in de toekomst worden toegevoegd.
+
+**Q: Welke podcast-platformen worden ondersteund?**  
+A: ChristelijkePodcasts ondersteunt meerdere populaire podcastplatformen met een breed scala aan shows.
+
+**Q: Hoe meld ik een bug of doe ik een suggestie?**  
+A: Open een issue op onze GitHub- repository met details van je suggestie of bugrapport.
+
+## 📬 Contact
+
+Heb je vragen, feedback of wil je gewoon hallo zeggen? Neem contact met ons op via [devlamper06@gmail.com](mailto:devlamper06@gmail.com).
+
+Thanks for checking out **ChristelijkePodcasts**! 📖
