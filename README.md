@@ -42,9 +42,6 @@ ChristelijkePodcasts maakt gebruik van moderne technologieën voor een optimale 
 - **Home**: De hoofdpagina die een overzicht biedt van populaire en aanbevolen christelijke podcasts.
 - **Categorieën**: Bekijk podcasts op basis van verschillende onderwerpen zoals onderwijs, aanbidding en bijbelstudie.
 - **Trending**: Bekijk de meest populaire podcasts van dit moment.
-- **Favorieten**: Toegang tot je opgeslagen favoriete podcasts.
-- **Zoeken**: Vind eenvoudig specifieke afleveringen of shows door gebruik te maken van zoek- en filteropties.
-- **Instellingen**: Beheer je gebruikersvoorkeuren en accountinstellingen.
 - **Help/FAQ**: Toegang tot veelgestelde vragen en ondersteuningsbronnen.
 
 ## 🌐 API
