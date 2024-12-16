@@ -34,7 +34,7 @@ export function AppSidebar() {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/search" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Home className="mr-4 text-white hover:text-gray-300" />
                 <span className="text-white hover:text-gray-300">
                     Home
