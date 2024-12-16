@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Filter from '@/components/Filter';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiFillHeart, AiOutlineMinusCircle } from 'react-icons/ai';
 import { ClipLoader } from 'react-spinners';
 
 export default function Home() {
@@ -117,13 +117,17 @@ export default function Home() {
                       height={500}
                       className="w-full h-48 object-cover"
                     />
-                    <div className="p-4">
+                    <div className="p-4 flex flex-col justify-between h-32">
                       <h2 className="text-xl font-semibold">{show.name}</h2>
                       <button
-                        onClick={() => toggleFavorite(show)}
-                        className="mt-2 text-sm text-red-500"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleFavorite(show);
+                        }}
+                        className="mt-2 text-red-500 hover:text-red-600 transition duration-300 ease-in-out"
+                        aria-label="Remove from favorites"
                       >
-                        Verwijder van Favorieten
+                        <AiOutlineMinusCircle className="text-2xl" />
                       </button>
                     </div>
                   </div>
@@ -135,13 +139,16 @@ export default function Home() {
           <h2 className="text-xl font-semibold mt-6">Alle Podcasts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
             {visiblePodcasts.map((show: Podcast) => (
-              <Link 
-                href={show.external_urls.spotify} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <div 
+                className="border rounded-lg flex-col h-full hover:shadow-[#ffffff4d] hover:shadow-md hover:transform overflow-hidden block hover:scale-102 ease-in transition duration-200"
                 key={show.id}
               >
-                <div className='border rounded-lg flex-col h-full hover:shadow-[#ffffff4d] hover:shadow-md hover:transform overflow-hidden block hover:scale-102 ease-in transition duration-200'>
+                <Link 
+                  href={show.external_urls.spotify} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-grow"
+                >
                   <Image 
                     src={show.images[0]?.url || '/placeholder-image.jpg'} 
                     alt={show.name} 
@@ -149,23 +156,31 @@ export default function Home() {
                     height={500} 
                     className="w-full h-48 object-cover rounded-t-lg" 
                   />
-                  <div className="p-4">
+                  <div className="p-4 flex flex-col justify-between h-32">
                     <h2 className="text-xl font-semibold">{show.name}</h2>
                     <p className="text-sm mt-2 opacity-70">
-                      {show.description.length > 150 
-                        ? `${show.description.substring(0, 150)}...` 
+                      {show.description.length > 120 
+                        ? `${show.description.substring(0, 120)}...` 
                         : show.description}
                     </p>
-                    <button onClick={() => toggleFavorite(show)} className='mt-6'>
-                        {isFavorite(show) ? (
-                        <AiFillHeart className="text-red-500 text-2xl cursor-pointer transition duration-300 ease-in-out transform hover:scale-110" />
-                        ) : (
-                        <AiOutlineHeart className="text-gray-500 text-2xl cursor-pointer transition duration-300 ease-in-out transform hover:text-green-500 hover:scale-110" />
-                        )}
-                    </button>
                   </div>
+                </Link>
+                <div className="p-4 flex justify-between items-center">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleFavorite(show);
+                    }}
+                    className="mt-2"
+                  >
+                    {isFavorite(show) ? (
+                      <AiFillHeart className="text-red-500 text-2xl cursor-pointer transition duration-300 ease-in-out transform hover:scale-110" />
+                    ) : (
+                      <AiOutlineHeart className="text-gray-500 text-2xl cursor-pointer transition duration-300 ease-in-out transform hover:text-green-500 hover:scale-110" />
+                    )}
+                  </button>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
           {!showAll && filteredResults.length > 8 && (
