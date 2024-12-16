@@ -4,15 +4,31 @@ import { Podcast } from '@/types/Podcast';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Filter from '@/components/Filter';
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<Podcast[]>([]);
+  const [filteredResults, setFilteredResults] = useState<Podcast[]>([]);
   const [showAll, setShowAll] = useState(false);
+
+  const filters = {
+    frequentie: ['Dagelijks', 'Wekelijks'],
+    doelgroep: ['Jongeren', 'Gezinnen', 'Kinderen'],
+    taal: ['Nederlands', 'Engels'],
+    duur: ['Kort', 'Gemiddeld', 'Lang'],
+  };
+
+  const [selectedFilters, setSelectedFilters] = useState({
+    frequentie: '',
+    doelgroep: '',
+    taal: '',
+    duur: '',
+  });
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/search?query=Christelijk&market=ES');
+        const response = await fetch('/api/search?market=ES');
         if (!response.ok) {
           throw new Error('Failed to fetch shows');
         }
@@ -26,11 +42,36 @@ export default function Home() {
     fetchData();
   }, []);
 
-  const visiblePodcasts = showAll ? searchResults : searchResults.slice(0, 8);
+  useEffect(() => {
+    const filtered = searchResults.filter((podcast) => {
+      const matchesFrequentie =
+        !selectedFilters.frequentie || podcast.description.toLowerCase().includes(selectedFilters.frequentie.toLowerCase());
+      const matchesDoelgroep =
+        !selectedFilters.doelgroep || podcast.description.toLowerCase().includes(selectedFilters.doelgroep.toLowerCase());
+      const matchesTaal =
+        !selectedFilters.taal || podcast.description.toLowerCase() === selectedFilters.taal.toLowerCase();
+      const matchesDuur =
+        !selectedFilters.duur || podcast.description.toLowerCase().includes(selectedFilters.duur.toLowerCase());
+
+      return matchesFrequentie && matchesDoelgroep && matchesTaal && matchesDuur;
+    });
+
+    setFilteredResults(filtered);
+  }, [searchResults, selectedFilters]);
+
+  const visiblePodcasts = showAll ? filteredResults : filteredResults.slice(0, 8);
 
   return (
     <div className="p-12">
-      <h1 className="text-2xl font-bold mb-4">Populaire Podcasts</h1>
+      <h1 className="text-2xl font-bold mb-4">Ontdek Podcasts</h1>
+
+      {/* Filter Component */}
+      <Filter
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+      />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {visiblePodcasts.map((show: Podcast) => (
           <Link 
@@ -59,7 +100,7 @@ export default function Home() {
           </Link>
         ))}
       </div>
-      {!showAll && searchResults.length > 8 && (
+      {!showAll && filteredResults.length > 8 && (
         <button
           onClick={() => setShowAll(true)}
           className="mt-4 bg-white border text-black p-4 rounded-lg hover:opacity-95 font-semibold transition-90"
