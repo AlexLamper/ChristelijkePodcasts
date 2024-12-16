@@ -27,7 +27,7 @@ async function getSpotifyAccessToken() {
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const market = searchParams.get('market') || 'ES';
-  const limit = 20;
+  const limit = 10;
 
   const queries = ['Christelijk', 'Bijbel', 'Theologie', 'Gebed', 'Apologetiek'];
   let aggregatedResults: Podcast[] = [];
