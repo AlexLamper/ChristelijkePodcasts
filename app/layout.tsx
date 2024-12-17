@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import { Inter } from 'next/font/google'
 import "./globals.css"
 import { AppSidebar } from "@/components/AppSidebar"
-import Header from "@/components/Header"
+// import Header from "@/components/Header"
 import { SidebarProvider } from "@/components/ui/sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Christelijke Podcasts",
+  title: "Christelijke Podcasts | Home",
   description: "Ontdek en luister naar christelijke podcasts",
 }
 
@@ -24,7 +24,7 @@ export default function RootLayout({
           <div className="flex h-screen">
             <AppSidebar />
             <main className="flex-1 overflow-auto">
-              <Header />
+              {/* <Header /> */}
               {children}
             </main>
           </div>

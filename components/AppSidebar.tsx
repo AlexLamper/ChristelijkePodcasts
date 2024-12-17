@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Home, Library, PlusCircle, Heart } from 'lucide-react'
+import { HelpCircleIcon, Home, Library, Phone } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -32,44 +32,40 @@ export function AppSidebar() {
               <DailyVerse />
             </SidebarMenuButton>
           </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link href="/" className="flex items-center">
-                <Home className="mr-4 text-white hover:text-gray-300" />
-                <span className="text-white hover:text-gray-300">
-                    Home
-                </span>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link href="/favorieten" className="flex items-center">
-                <Library className="mr-4 text-white hover:text-gray-300" />
-                <span className="text-white hover:text-gray-300">
-                    Favorieten
-                </span>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="p-6 text-white hover:text-gray-300">
         <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton className="flex items-center">
-                <PlusCircle className="mr-4 text-white hover:text-gray-300" />
-                <span className="text-white hover:text-gray-300">
-                    Playlist Aanmaken
-                </span>
+          <SidebarMenuItem className="py-2">
+            <SidebarMenuButton className="flex items-center text-white hover:text-gray-300">
+              <Link href="/" className="flex items-center">
+                <Home className="mr-4" />
+                  Home
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton className="flex items-center">
-                <Heart className="mr-4 text-white hover:text-gray-300" />
-                <span className="text-white hover:text-gray-300">
-                    Favoriete Podcasts
-                </span>
+          <SidebarMenuItem className="py-2">
+            <SidebarMenuButton className="flex items-center text-white hover:text-gray-300">
+              <Link href="/favorieten" className="flex items-center">
+                <Library className="mr-4" />
+                  Favorieten
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem className="py-2">
+            <SidebarMenuButton className="flex items-center text-white hover:text-gray-300">
+              <Link href="/contact" className="flex items-center">
+                <Phone className="mr-4" />
+                  Contact
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem className="py-2">
+            <SidebarMenuButton className="flex items-center text-white hover:text-gray-300">
+              <Link href="/help" className="flex items-center">
+                <HelpCircleIcon className="mr-4" />
+                  Help
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
