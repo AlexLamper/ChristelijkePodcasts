@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Home, Search, Library, PlusCircle, Heart } from 'lucide-react'
+import { Home, Library, PlusCircle, Heart } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -12,12 +12,13 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
+import DailyVerse from "@/components/DailyVerse"
 
 export function AppSidebar() {
   return (
     <Sidebar className="bg-black">
       <SidebarHeader>
-        <div className="p-6">
+        <div className="px-6 pt-6">
           <Link href={"/"}>
             <h1 className="text-3xl font-bold text-green-500">Christelijke</h1>
           </Link>
@@ -26,6 +27,11 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent className="p-6 text-white hover:text-gray-300">
         <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <DailyVerse />
+            </SidebarMenuButton>
+          </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href="/" className="flex items-center">
@@ -38,20 +44,10 @@ export function AppSidebar() {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/search" className="flex items-center">
-                <Search className="mr-4 text-white hover:text-gray-300" />
-                <span className="text-white hover:text-gray-300">
-                    Zoeken
-                </span>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link href="/library" className="flex items-center">
+              <Link href="/favorieten" className="flex items-center">
                 <Library className="mr-4 text-white hover:text-gray-300" />
                 <span className="text-white hover:text-gray-300">
-                    Jouw Podcasts
+                    Favorieten
                 </span>
               </Link>
             </SidebarMenuButton>
