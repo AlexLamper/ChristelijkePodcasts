@@ -99,8 +99,8 @@ body::-webkit-scrollbar {
 }
 
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .hover\:scale-102:hover {
