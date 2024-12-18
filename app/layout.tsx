@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://christelijkepodcasts.site",
   },
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
@@ -29,6 +32,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
+      <head>
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+      </head>
       <body className={`${inter.className} bg-black text-white`}>
         <SidebarProvider>
           <div className="flex h-screen">
