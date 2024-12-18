@@ -8,6 +8,7 @@ import Filter from '@/components/Filter';
 import { AiOutlineHeart, AiFillHeart, AiOutlineMinusCircle } from 'react-icons/ai';
 import { ClipLoader } from 'react-spinners';
 import { Button } from '@/components/ui/button';
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<Podcast[]>([]);
@@ -105,7 +106,12 @@ export default function Home() {
 
   return (
     <div className="p-6 sm:p-12">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-4">Ontdek <span className='text-green-500'>Podcasts</span></h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+          Ontdek <span className="text-green-500">Podcasts</span>
+        </h1>
+        <SidebarTrigger className="lg:hidden" />
+      </div>
 
       {/* Filter Component */}
       <Filter
