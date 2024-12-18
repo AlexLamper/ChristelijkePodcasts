@@ -87,9 +87,9 @@ Thanks for checking out **ChristelijkePodcasts**! 📖
 
 ---
 
-## Dutch Version
+## Nederlandse Versie
 
-Dank je wel voor het bekijken van [**ChristelijkePodcasts**](https://www.christelijkepodcasts.com/) – Jouw Platform voor Christelijke Podcasts.
+Bedankt voor het bekijken van [**ChristelijkePodcasts**](https://www.christelijkepodcasts.com/) – Jouw Platform voor Christelijke Podcasts.
 
 ### Over ChristelijkePodcasts
 
