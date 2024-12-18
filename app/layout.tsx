@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Ontdek en beluister je favoriete christelijke podcasts, van inspirerende preken en Bijbelstudies tot gesprekken over het christelijk geloof. Luister naar de beste Nederlandse podcasts over het christelijk geloof, kerkmuziek, discipelschap, gebed, evangelieverkondiging en spirituele groei. Blijf op de hoogte van nieuwe afleveringen van populaire religieuze podcasts.",
     url: "https://christelijkepodcasts.com",
     type: "website",
-    images: [{ url: "https://christelijkepodcasts.com/og-image.jpg", alt: "Christelijke Podcasts" }],
+    images: [{ url: "https://christelijkepodcasts.com/og-image.svg", alt: "Christelijke Podcasts" }],
   },
   alternates: {
     canonical: "https://christelijkepodcasts.site",
