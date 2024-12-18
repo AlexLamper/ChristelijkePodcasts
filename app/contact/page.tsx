@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ContactPage() {
   return (
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
-      <h1 className="text-2xl md:text-3xl font-bold mb-6">Contact</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl md:text-3xl font-bold mb-6">Contact</h1>
+        <SidebarTrigger className="lg:hidden mb-4" />
+      </div>
       
       <p className="mb-6 text-gray-100">
         Heeft u vragen, opmerkingen of suggesties? We staan voor u klaar! Hieronder vindt u verschillende manieren om contact met ons op te nemen.

@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
 export default function HelpPage() {
   const [openAll, setOpenAll] = useState(false)
@@ -42,7 +43,10 @@ export default function HelpPage() {
 
   return (
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
-      <h1 className="text-2xl md:text-3xl font-bold mb-6">Help & Veelgestelde Vragen</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl md:text-3xl font-bold mb-6">Help & Veelgestelde Vragen</h1>
+        <SidebarTrigger className="lg:hidden mb-4" />
+      </div>
       
       <p className="mb-6 text-gray-100">
         Welkom op onze helppagina. Hier vindt u antwoorden op veelgestelde vragen over het gebruik van onze podcast ontdekkingsservice. 
