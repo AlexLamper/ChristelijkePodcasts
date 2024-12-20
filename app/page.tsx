@@ -2,13 +2,12 @@
 
 import { Podcast } from '@/types/Podcast';
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import Filter from '@/components/Filter';
-import { AiOutlineHeart, AiFillHeart, AiOutlineMinusCircle } from 'react-icons/ai';
 import { ClipLoader } from 'react-spinners';
 import { Button } from '@/components/ui/button';
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import Podcasts from '@/components/Podcasts';
+import FavorietePodcasts from '@/components/FavorietePodcasts';
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<Podcast[]>([]);
@@ -126,97 +125,28 @@ export default function Home() {
         </div>
       ) : (
         <>
-
           <div className="my-12">
-            <h2 className="text-2xl font-semibold mt-6">Favoriete Podcasts</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              {favorites.map((show) => (
-                <div key={show.id} className="rounded-lg hover:shadow-lg transition-transform hover:scale-102 overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A] hover:cursor-pointer">
-                  <Image
-                    src={show.images[0]?.url || '/placeholder-image.jpg'}
-                    alt={show.name}
-                    width={500}
-                    height={500}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4 flex flex-col justify-between h-32">
-                    <h2 className="text-lg font-semibold">{show.name}</h2>
-                    <p className="text-sm sm:text-base mt-2 text-gray-300 line-clamp-3">
-                      {show.description.length > 100
-                        ? `${show.description.substring(0, 100)}...`
-                        : show.description}
-                    </p>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleFavorite(show);
-                      }}
-                      className="mt-2 text-red-500 hover:text-red-600 transition duration-300 ease-in-out"
-                      aria-label="Remove from favorites"
-                    >
-                      <AiOutlineMinusCircle className="text-2xl" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FavorietePodcasts favorites={favorites} toggleFavorite={toggleFavorite} />
           </div>
 
-          <h2 className="text-2xl font-semibold mt-6">Podcasts</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
-            {visiblePodcasts.map((show: Podcast) => (
-              <div
-                key={show.id}
-                className="rounded-lg flex flex-col hover:shadow-lg transition-transform hover:scale-102 overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A]"
-              >
-                <Link
-                  href={show.external_urls.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-grow"
-                >
-                  <Image
-                    src={show.images[0]?.url || '/placeholder-image.jpg'}
-                    alt={show.name}
-                    width={500}
-                    height={300}
-                    className="w-full h-40 sm:h-48 object-cover rounded-t-lg"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg sm:text-xl font-semibold truncate">{show.name}</h3>
-                    <p className="text-sm sm:text-base mt-2 text-gray-300 line-clamp-3">
-                      {show.description.length > 100
-                        ? `${show.description.substring(0, 100)}...`
-                        : show.description}
-                    </p>
-                  </div>
-                </Link>
-                <div className="p-4 flex justify-between items-center">
-                  <button onClick={() => toggleFavorite(show)}>
-                    {isFavorite(show) ? (
-                      <AiFillHeart className="text-red-500 text-2xl hover:scale-110 transition-transform" />
-                    ) : (
-                      <AiOutlineHeart className="text-gray-300 text-2xl hover:text-green-500 hover:scale-110 transition-transform" />
-                    )}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Podcasts
+            podcasts={visiblePodcasts}
+            toggleFavorite={toggleFavorite}
+            isFavorite={isFavorite}
+          />
 
           {!showAll && filteredResults.length > visibleCount && (
             <div className="flex mt-6">
-                <Button 
-                  onClick={() => setShowAll(true)}
-                  variant="outline"
-                  className="text-black px-6 py-6 text-base"
-                >
-                  Bekijk alle podcasts
-                </Button>
+              <Button
+                onClick={() => setShowAll(true)}
+                variant="outline"
+                className="text-black px-6 py-6 text-base"
+              >
+                Bekijk alle podcasts
+              </Button>
             </div>
           )}
 
-          {/* Infinite Scroll Trigger */}
           {!showAll && <div ref={observerRef} className="h-10"></div>}
         </>
       )}
