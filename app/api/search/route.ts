@@ -29,7 +29,56 @@ export async function GET(req: Request) {
   const market = searchParams.get('market') || 'ES';
   const limit = 10;
 
-  const queries = ['Christelijk', 'Bijbel', 'Theologie', 'Gebed', 'Apologetiek'];
+  const queries = [
+    'Christelijk', 
+    'Bijbel', 
+    'Theologie', 
+    'Gebed', 
+    'Apologetiek', 
+    'Evangelie', 
+    'Discipelschap', 
+    'Jezus', 
+    'Christus', 
+    'Kerk', 
+    'Bijbelstudie', 
+    'Genade', 
+    'Heilige Geest', 
+    'Evangelisatie', 
+    'Profetie', 
+    'Geloof', 
+    'Opwekking', 
+    'Lofprijzing', 
+    'Aanbidding', 
+    'God', 
+    'Zending', 
+    'Christelijke opvoeding', 
+    'Bijbelse verhalen', 
+    'Geestelijk leiderschap', 
+    'Christelijke liederen', 
+    'Bemoediging', 
+    'Christelijke ethiek', 
+    'Vergeving', 
+    'Heiligheid', 
+    'Gebedsleven', 
+    'Bijbelse wijsheid', 
+    'Vasten', 
+    'Openbaring', 
+    'Nieuwe Testament', 
+    'Oude Testament', 
+    'Pastoraat', 
+    'Leven met God', 
+    'Bijbelse principes', 
+    'Heilig Avondmaal', 
+    'Doop', 
+    'Christelijke getuigenis', 
+    'Schepping', 
+    'Christelijke feestdagen', 
+    'Heilig Schrift', 
+    'Geloofsgroei', 
+    'Christelijke counseling', 
+    'Bijbelse waarheid'
+  ];
+  
   let aggregatedResults: Podcast[] = [];
 
   try {

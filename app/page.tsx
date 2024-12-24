@@ -20,14 +20,14 @@ export default function Home() {
 
   const filters = {
     frequentie: ['Dagelijks', 'Wekelijks'],
-    doelgroep: ['Jongeren', 'Gezinnen', 'Kinderen'],
+    doelgroepen: ['Jongeren', 'Gezinnen', 'Kinderen'],
     taal: ['Nederlands', 'Engels'],
     duur: ['Kort', 'Gemiddeld', 'Lang'],
   };
 
   const [selectedFilters, setSelectedFilters] = useState({
     frequentie: '',
-    doelgroep: '',
+    doelgroepen: '',
     taal: '',
     duur: '',
   });
@@ -64,7 +64,7 @@ export default function Home() {
       const matchesFrequentie =
         !selectedFilters.frequentie || podcast.description.toLowerCase().includes(selectedFilters.frequentie.toLowerCase());
       const matchesDoelgroep =
-        !selectedFilters.doelgroep || podcast.description.toLowerCase().includes(selectedFilters.doelgroep.toLowerCase());
+        !selectedFilters.doelgroepen || podcast.description.toLowerCase().includes(selectedFilters.doelgroepen.toLowerCase());
       const matchesTaal =
         !selectedFilters.taal || podcast.description.toLowerCase() === selectedFilters.taal.toLowerCase();
       const matchesDuur =
@@ -121,9 +121,10 @@ export default function Home() {
       />
 
       {loading ? (
-        <div className="flex justify-center items-center h-64">
+        <div className="flex flex-col justify-center items-center h-64">
           <ClipLoader size={50} color="#22C55D" />
-        </div>
+          <p className="text-white text-md mt-4">Podcasts worden geladen...</p>
+        </div>      
       ) : (
         <>
           <div className="my-12">
