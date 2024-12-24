@@ -11,7 +11,7 @@ interface FavorietePodcastsProps {
 
 export default function FavorietePodcasts({ favorites, toggleFavorite }: FavorietePodcastsProps) {
   return (
-    <div className="my-12">
+    <div className="mb-12">
       <h2 className="text-2xl font-semibold mt-6">Favoriete Podcasts</h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {favorites.map((show) => (

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import Podcasts from '@/components/Podcasts';
 import FavorietePodcasts from '@/components/FavorietePodcasts';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<Podcast[]>([]);
@@ -126,8 +127,11 @@ export default function Home() {
       ) : (
         <>
           <div className="my-12">
+            <Separator />
             <FavorietePodcasts favorites={favorites} toggleFavorite={toggleFavorite} />
           </div>
+
+          <Separator />
 
           <Podcasts
             podcasts={visiblePodcasts}
