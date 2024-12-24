@@ -5,20 +5,20 @@ import { Dispatch, SetStateAction } from 'react';
 interface FilterProps {
   filters: {
     frequentie: string[];
-    doelgroep: string[];
+    doelgroepen: string[];
     taal: string[];
     duur: string[];
   };
   selectedFilters: {
     frequentie: string;
-    doelgroep: string;
+    doelgroepen: string;
     taal: string;
     duur: string;
   };
   setSelectedFilters: Dispatch<
     SetStateAction<{
       frequentie: string;
-      doelgroep: string;
+      doelgroepen: string;
       taal: string;
       duur: string;
     }>
