@@ -15,8 +15,8 @@ export default function Home() {
   const [filteredResults, setFilteredResults] = useState<Podcast[]>([]);
   const [favorites, setFavorites] = useState<Podcast[]>([]);
   const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(8); // Initial count of podcasts displayed
-  const [showAll, setShowAll] = useState(false); // Tracks if all podcasts are displayed
+  const [visibleCount, setVisibleCount] = useState(8);
+  const [showAll, setShowAll] = useState(false);
 
   const filters = {
     frequentie: ['Dagelijks', 'Wekelijks'],
