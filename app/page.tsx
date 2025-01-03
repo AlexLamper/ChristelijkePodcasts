@@ -128,8 +128,9 @@ export default function Home() {
       ) : (
         <>
           <div className="my-12">
-            <Separator />
-            <FavorietePodcasts favorites={favorites} toggleFavorite={toggleFavorite} />
+            {favorites.length > 0 && (
+              <><Separator /><FavorietePodcasts favorites={favorites} toggleFavorite={toggleFavorite} /></>
+            )}
           </div>
 
           <Separator />

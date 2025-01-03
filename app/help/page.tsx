@@ -67,7 +67,7 @@ export default function HelpPage() {
       <Accordion type="multiple" className="w-full" value={openAll ? faqItems.map((_, index) => `item-${index}`) : undefined}>
         {faqItems.map((item, index) => (
           <AccordionItem value={`item-${index}`} key={index}>
-            <AccordionTrigger>{item.question}</AccordionTrigger>
+            <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
             <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
@@ -85,4 +85,3 @@ export default function HelpPage() {
     </div>
   )
 }
-
