@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
-import DailyVerse from "@/components/DailyVerse"
+// import DailyVerse from "@/components/DailyVerse"
 
 export function AppSidebar() {
   return (
@@ -29,7 +29,7 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <DailyVerse />
+              {/* <DailyVerse /> */}
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
