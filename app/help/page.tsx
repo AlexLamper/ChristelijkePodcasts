@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { SidebarTrigger } from '@/components/ui/sidebar'
+import { Separator } from '@/components/ui/separator'
 
 export default function HelpPage() {
   const [openAll, setOpenAll] = useState(false)
@@ -44,21 +45,25 @@ export default function HelpPage() {
   return (
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6">Help & Veelgestelde Vragen</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Help & Veelgestelde Vragen</h1>
         <SidebarTrigger className="lg:hidden mb-4" />
       </div>
+
+      <div className='lg:hidden'>
+        <Separator />
+      </div>
       
-      <p className="mb-6 text-gray-100">
+      <p className="mb-6 text-gray-900 dark:text-gray-300">
         Welkom op onze helppagina. Hier vindt u antwoorden op veelgestelde vragen over het gebruik van onze podcast ontdekkingsservice. 
         Als u uw vraag hier niet kunt vinden, neem dan gerust contact met ons op.
       </p>
 
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold">FAQ</h2>
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">FAQ</h2>
         <Button 
           onClick={() => setOpenAll(!openAll)} 
           variant="outline"
-          className='text-black'
+          className='text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700'
         >
           {openAll ? 'Alles sluiten' : 'Alles openen'}
         </Button>
@@ -67,19 +72,21 @@ export default function HelpPage() {
       <Accordion type="multiple" className="w-full" value={openAll ? faqItems.map((_, index) => `item-${index}`) : undefined}>
         {faqItems.map((item, index) => (
           <AccordionItem value={`item-${index}`} key={index}>
-            <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
-            <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionTrigger className="text-left text-gray-900 dark:text-white">{item.question}</AccordionTrigger>
+            <AccordionContent className="text-gray-800 dark:text-gray-300">{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
 
-      <div className="mt-8 p-4 bg-gray-200 rounded-lg text-black">
+      <div className="mt-8 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg text-black dark:text-white">
         <h2 className="text-xl font-semibold mb-2">Nog steeds hulp nodig?</h2>
         <p className="mb-4">
           Als u uw vraag niet in onze FAQ kunt vinden, neem dan contact met ons op. We staan klaar om u te helpen!
         </p>
         <Button asChild>
-          <Link href="/contact">Neem contact op</Link>
+          <Link href="/contact">
+            Neem contact op
+          </Link>
         </Button>
       </div>
     </div>

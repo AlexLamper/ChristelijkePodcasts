@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Separator } from '@/components/ui/separator';
 
 export default function Favourites() {
   const [favorites, setFavorites] = useState<Podcast[]>([]);
@@ -27,6 +28,9 @@ export default function Favourites() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold mb-4">Favoriete Podcasts</h1>
         <SidebarTrigger className="lg:hidden mb-4" />
+      </div>
+      <div className='lg:hidden'>
+        <Separator />
       </div>
       {favorites.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
