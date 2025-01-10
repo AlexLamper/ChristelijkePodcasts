@@ -1,7 +1,8 @@
-// app/podcasts/[id]/page.tsx
 import { Podcast, Episode } from "@/types/Podcast";
 import Link from "next/link";
 import Image from "next/image";
+import { ModeToggle } from "@/components/mode-toggle";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 interface PodcastDetailsProps {
   params: Promise<{ id: string }>;
@@ -80,15 +81,8 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
     const podcast = await getPodcast(id);
     const episodes = await getEpisodes(id);
 
-    console.log("Podcast Data:", podcast); // Debugging log to check API response
-
-    // Extract and format the language
-    // const language = Array.isArray(podcast.languages)
-    //   ? podcast.languages.join(", ")
-    //   : podcast.languages || "Not specified";
-
     return (
-      <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-900">
+      <div className="p-6 mx-auto">
         {/* Back Link */}
         <div className="mb-4">
           <Link
@@ -100,9 +94,17 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
         </div>
 
         {/* Podcast Details */}
-        <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
-          {podcast.name}
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
+            {podcast.name}
+          </h1>
+          <div className="mb-2">
+            <ModeToggle />
+          </div>
+          <SidebarTrigger className="lg:hidden mb-4" />
+        </div>
+        
+        {/* Podcast Description */}
         <div className="flex flex-col md:flex-row mb-8">
           {podcast.images.length > 0 && (
             <Image
@@ -119,7 +121,7 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
         </div>
 
         {/* Podcast Meta Details */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md">
+        <div className="bg-gray-100 dark:bg-[#1A1A1A] p-4 rounded-md border border-gray-200 dark:border-[#2A2A2A]">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
             Podcast Details
           </h2>
@@ -137,14 +139,14 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
               <strong className="text-gray-800 dark:text-gray-200">Available Markets:</strong> {podcast.available_markets.join(", ")}
             </li>
             <li>
-              <strong className="text-gray-800 dark:text-gray-200">Spotify Link:</strong> 
+              <strong className="text-gray-800 dark:text-gray-200">Spotify Link: </strong>
               <a
                 href={podcast.external_urls.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 underline"
               >
-                Open on Spotify
+                Beluister op Spotify
               </a>
             </li>
           </ul>
@@ -166,28 +168,35 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
 
         {/* Episodes */}
         <div className="mt-8">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Episodes</h2>
-          <ul className="space-y-4">
-            {episodes.map((episode) => (
-              <li key={episode.id} className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
-                  {episode.name}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-2">{episode.description}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Duration: {(episode.duration_ms / 60000).toFixed(2)} minutes
-                </p>
-                <a
-                  href={episode.external_urls.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 underline"
-                >
-                  Listen on Spotify
-                </a>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Episodes - {podcast.total_episodes}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {episodes.map((episode) => {
+              // Limit description to 50 words
+              const description = episode.description
+                ? episode.description.split(" ").slice(0, 50).join(" ") + (episode.description.split(" ").length > 50 ? "..." : "")
+                : "No description available.";
+
+              return (
+                <li key={episode.id} className="p-4 bg-transparent dark:bg-[#1A1A1A] rounded-md shadow-sm border border-gray-200 dark:border-[#2A2A2A]">
+                  <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                    {episode.name}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">{description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    Duration: {(episode.duration_ms / 60000).toFixed(2)} minutes
+                  </p>
+                  <a
+                    href={episode.external_urls.spotify}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 underline"
+                  >
+                    Beluister op Spotify
+                  </a>
+                </li>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

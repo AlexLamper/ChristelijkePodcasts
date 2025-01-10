@@ -111,10 +111,10 @@ export default function Home() {
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">
           Ontdek <span className="text-green-500">Podcasts</span>
         </h1>
-        <div className="mb-2">
+        <div className="mb-2 space-y-2">
           <ModeToggle />
+          <SidebarTrigger className="lg:hidden" />
         </div>
-        <SidebarTrigger className="lg:hidden mb-2" />
       </div>
 
       {/* Filter Component */}
