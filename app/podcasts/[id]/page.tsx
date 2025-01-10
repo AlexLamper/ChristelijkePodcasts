@@ -48,71 +48,73 @@ async function getPodcast(id: string): Promise<Podcast> {
   return res.json();
 }
 
-export default async function PodcastDetails(props: PodcastDetailsProps) {
+// PodcastDetails Component
+export default async function PodcastDetails({ params }: PodcastDetailsProps) {
+  const { id } = params;
+
   try {
-    const { id } = await props.params;
     const podcast = await getPodcast(id);
 
     return (
-        <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-900 shadow-md rounded-md">
-          {/* Podcast Title */}
-          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
-            {podcast.name}
-          </h1>
-  
-          {/* Podcast Image */}
-          <div className="mb-6">
-            {podcast.images.length > 0 && (
-              <img
-                src={podcast.images[0].url}
-                alt={podcast.name}
-                className="rounded-md shadow-lg mx-auto w-full max-w-md object-cover"
-              />
-            )}
-          </div>
-  
-          {/* Podcast Description */}
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            {podcast.description}
-          </p>
-  
-          {/* Podcast Details */}
-          <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Details</h2>
-            <ul className="space-y-2">
-              <li>
-                <strong className="text-gray-800 dark:text-gray-200">ID:</strong> {podcast.id}
-              </li>
-              <li>
-                <strong className="text-gray-800 dark:text-gray-200">Language:</strong>{" "}
-                {Array.isArray(podcast.language)
-                  ? podcast.language.join(", ")
-                  : podcast.language}
-              </li>
-              <li>
-                <strong className="text-gray-800 dark:text-gray-200">Spotify Link:</strong>{" "}
-                <a
-                  href={podcast.external_urls.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 underline"
-                >
-                  Open on Spotify
-                </a>
-              </li>
-            </ul>
-          </div>
+      <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-900 shadow-md rounded-md">
+        {/* Podcast Title */}
+        <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
+          {podcast.name}
+        </h1>
+
+        {/* Podcast Image */}
+        <div className="mb-6">
+          {podcast.images.length > 0 && (
+            <img
+              src={podcast.images[0].url}
+              alt={podcast.name}
+              className="rounded-md shadow-lg mx-auto w-full max-w-md object-cover"
+            />
+          )}
         </div>
-      );
-    } catch (error) {
-      console.error(error);
-      return (
-        <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-900 shadow-md rounded-md">
-          <h1 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">
-            Error loading podcast
-          </h1>
-          <p className="text-gray-600 dark:text-gray-300">Please try again later.</p>
+
+        {/* Podcast Description */}
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          {podcast.description}
+        </p>
+
+        {/* Podcast Details */}
+        <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Details</h2>
+          <ul className="space-y-2">
+            <li>
+              <strong className="text-gray-800 dark:text-gray-200">ID:</strong> {podcast.id}
+            </li>
+            <li>
+              <strong className="text-gray-800 dark:text-gray-200">Language:</strong>{" "}
+              {Array.isArray(podcast.language)
+                ? podcast.language.join(", ")
+                : podcast.language}
+            </li>
+            <li>
+              <strong className="text-gray-800 dark:text-gray-200">Spotify Link:</strong>{" "}
+              <a
+                href={podcast.external_urls.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 underline"
+              >
+                Open on Spotify
+              </a>
+            </li>
+          </ul>
         </div>
-      );
-    }
+      </div>
+    );
+  } catch (error) {
+    console.error(error);
+    return (
+      <div className="p-6 max-w-4xl mx-auto bg-white dark:bg-gray-900 shadow-md rounded-md">
+        <h1 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">
+          Error loading podcast
+        </h1>
+        <p className="text-gray-600 dark:text-gray-300">Please try again later.</p>
+      </div>
+    );
+  }
 }
