@@ -2,7 +2,7 @@
 import { Podcast } from "@/types/Podcast";
 
 interface PodcastDetailsProps {
-  params: { id: string };
+    params: Promise<{ id: string }>;
 }
 
 // Fetch Spotify Access Token
@@ -49,8 +49,8 @@ async function getPodcast(id: string): Promise<Podcast> {
 }
 
 // PodcastDetails Component
-export default async function PodcastDetails({ params }: PodcastDetailsProps) {
-  const { id } = params;
+export default async function PodcastDetails(props: PodcastDetailsProps) {
+    const { id } = await props.params;
 
   try {
     const podcast = await getPodcast(id);
