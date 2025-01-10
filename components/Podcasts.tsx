@@ -53,6 +53,12 @@ export default function Podcasts({ podcasts, toggleFavorite, isFavorite }: Podca
                   <AiOutlineHeart className="text-gray-400 dark:text-gray-300 text-2xl hover:text-green-500 hover:scale-110 transition-transform" />
                 )}
               </button>
+              <Link
+                href={`/podcasts/${show.id}`}
+                className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Details
+              </Link>
             </div>
           </div>
         ))}
