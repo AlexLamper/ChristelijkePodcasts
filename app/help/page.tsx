@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import { Separator } from '@/components/ui/separator'
+import { ModeToggle } from '@/components/mode-toggle'
 
 export default function HelpPage() {
   const [openAll, setOpenAll] = useState(false)
@@ -46,6 +47,9 @@ export default function HelpPage() {
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Help & Veelgestelde Vragen</h1>
+        <div className="mb-2">
+          <ModeToggle />
+        </div>
         <SidebarTrigger className="lg:hidden mb-4" />
       </div>
 
