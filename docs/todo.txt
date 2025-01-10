@@ -1,0 +1,5 @@
+TODO:
+
+- Filter functionaliteit toevoegen
+- Sidebar die automatisch sluit wanneer er word geklikt/geredirect naar andere pagina
+- Opvulling sidebar (daily verse? etc.)
