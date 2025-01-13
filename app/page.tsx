@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <div className="p-6 sm:p-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+        <h1 className="lg:text-3xl sm:text-xl text-xl font-bold mb-4">
           Ontdek <span className="text-green-600 dark:text-green-500">Podcasts</span>
         </h1>
         <div className="mb-2 space-y-2">

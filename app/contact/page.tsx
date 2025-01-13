@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="p-6 md:p-12 mx-auto max-w-full">
       {/* Full-width header */}
       <div className="flex items-center justify-between w-full">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact</h1>
+        <h1 className="lg:text-3xl sm:text-xl text-xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white"><span className="sm:dark:text-green-500">Contact</span></h1>
         <div className="mb-2 space-y-2">
           <ModeToggle />
           <SidebarTrigger className="lg:hidden" />
