@@ -87,7 +87,11 @@ export default function HelpPage() {
         <p className="mb-4">
           Als u uw vraag niet in onze FAQ kunt vinden, neem dan contact met ons op. We staan klaar om u te helpen!
         </p>
-        <Button asChild>
+        <Button
+          asChild
+          variant="outline"
+          className="text-black px-6 py-6 text-base dark:bg-slate-100 dark:text-black dark:hover:bg-slate-200 dark:hover:text-black rounded-lg"
+        >
           <Link href="/contact">
             Neem contact op
           </Link>
