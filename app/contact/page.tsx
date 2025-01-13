@@ -54,7 +54,11 @@ export default function ContactPage() {
           <p className="mb-4">
             Voordat u contact met ons opneemt, kunt u wellicht het antwoord op uw vraag vinden in onze FAQ sectie.
           </p>
-          <Button asChild>
+          <Button
+            asChild
+            variant="outline"
+            className="text-black px-6 py-6 text-base dark:bg-slate-100 dark:text-black dark:hover:bg-slate-200 dark:hover:text-black rounded-lg"
+          >
             <Link href="/help">
               Bekijk FAQ
             </Link>
