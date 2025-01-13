@@ -46,7 +46,7 @@ export default function HelpPage() {
   return (
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Help & Veelgestelde Vragen</h1>
+        <h1 className="lg:text-3xl sm:text-xl text-xl font-bold mb-6 text-gray-900 dark:text-white"><span className="sm:dark:text-green-500">Help</span> & Veelgestelde Vragen</h1>
         <div className="mb-2 space-y-2">
           <ModeToggle />
           <SidebarTrigger className="lg:hidden" />

@@ -95,8 +95,10 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
 
         {/* Podcast Details */}
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
-            {podcast.name}
+          <h1 className="lg:text-3xl sm:text-xl text-xl font-extrabold text-gray-800 dark:text-white mb-4">
+            <span className="sm:dark:text-green-500">
+              {podcast.name}
+            </span>
           </h1>
           <div className="mb-2 space-y-2">
             <ModeToggle />

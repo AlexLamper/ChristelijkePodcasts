@@ -27,7 +27,7 @@ export default function Favourites() {
   return (
     <div className="p-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold mb-4">Favoriete Podcasts</h1>
+        <h1 className="lg:text-3xl sm:text-xl text-xl font-bold mb-4"><span className="sm:dark:text-green-500">Favoriete</span> Podcasts</h1>
         <div className="mb-2 space-y-2">
           <ModeToggle />
           <SidebarTrigger className="lg:hidden" />
