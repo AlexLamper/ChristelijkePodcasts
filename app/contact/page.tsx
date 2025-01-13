@@ -11,10 +11,10 @@ export default function ContactPage() {
       {/* Full-width header */}
       <div className="flex items-center justify-between w-full">
         <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact</h1>
-        <div className="mb-2">
+        <div className="mb-2 space-y-2">
           <ModeToggle />
+          <SidebarTrigger className="lg:hidden" />
         </div>
-        <SidebarTrigger className="lg:hidden mb-4" />
       </div>
 
       <div className="lg:hidden">
@@ -23,7 +23,7 @@ export default function ContactPage() {
 
       {/* Content with max width of 3xl */}
       <div className="max-w-3xl mx-auto">
-        <p className="mb-6 text-gray-900 dark:text-gray-300">
+        <p className="mb-6 text-gray-900 dark:text-gray-300 lg:mt-0 mt-6">
           Heeft u vragen, opmerkingen of suggesties? We staan voor u klaar! Hieronder vindt u verschillende manieren om contact met ons op te nemen.
         </p>
 
