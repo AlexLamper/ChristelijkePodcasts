@@ -98,10 +98,10 @@ export default async function PodcastDetails(props: PodcastDetailsProps) {
           <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-4">
             {podcast.name}
           </h1>
-          <div className="mb-2">
+          <div className="mb-2 space-y-2">
             <ModeToggle />
+            <SidebarTrigger className="lg:hidden" />
           </div>
-          <SidebarTrigger className="lg:hidden mb-4" />
         </div>
         
         {/* Podcast Description */}

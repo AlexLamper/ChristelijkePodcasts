@@ -28,10 +28,10 @@ export default function Favourites() {
     <div className="p-12">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold mb-4">Favoriete Podcasts</h1>
-        <div className="mb-2">
+        <div className="mb-2 space-y-2">
           <ModeToggle />
+          <SidebarTrigger className="lg:hidden" />
         </div>
-        <SidebarTrigger className="lg:hidden mb-4" />
       </div>
       <div className='lg:hidden'>
         <Separator />

@@ -47,17 +47,17 @@ export default function HelpPage() {
     <div className="p-6 md:p-12 max-w-3xl mx-auto">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Help & Veelgestelde Vragen</h1>
-        <div className="mb-2">
+        <div className="mb-2 space-y-2">
           <ModeToggle />
+          <SidebarTrigger className="lg:hidden" />
         </div>
-        <SidebarTrigger className="lg:hidden mb-4" />
       </div>
 
       <div className='lg:hidden'>
         <Separator />
       </div>
       
-      <p className="mb-6 text-gray-900 dark:text-gray-300">
+      <p className="mb-6 text-gray-900 dark:text-gray-300 lg:mt-0 mt-6">
         Welkom op onze helppagina. Hier vindt u antwoorden op veelgestelde vragen over het gebruik van onze podcast ontdekkingsservice. 
         Als u uw vraag hier niet kunt vinden, neem dan gerust contact met ons op.
       </p>
