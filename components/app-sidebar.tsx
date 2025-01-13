@@ -25,10 +25,10 @@ export function AppSidebar() {
             <Link href="/">
               <h1 className="text-3xl font-bold text-green-600 dark:text-green-500">Christelijke</h1>
             </Link>
-            <p className="text-sm text-gray-400 dark:text-gray-500">Podcasts</p>
+            <p className="text-sm text-gray-500 dark:text-gray-100">Podcasts</p>
           </div>
         </SidebarHeader>
-        <SidebarContent className="p-6 text-white dark:text-gray-300 hover:text-gray-300">
+        <SidebarContent className="p-6 text-black dark:text-white">
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
@@ -37,52 +37,52 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarContent>
-        <SidebarFooter className="p-6 text-white dark:text-gray-300 hover:text-gray-300">
+        <SidebarFooter className="p-6 text-black dark:text-white">
           <SidebarMenu>
             <SidebarMenuItem className="py-2">
-              <SidebarMenuButton className="flex items-center">
+              <SidebarMenuButton className="flex items-center hover:text-gray-500 dark:hover:text-gray-300">
                 <Link
                   href="/"
                   onClick={() => setOpenMobile(false)}
                   className="flex items-center"
                 >
-                  <Home className="mr-4 text-gray-800 dark:text-gray-300" />
+                  <Home className="mr-4 text-gray-800 dark:text-white" />
                   Home
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem className="py-2">
-              <SidebarMenuButton className="flex items-center">
+              <SidebarMenuButton className="flex items-center hover:text-gray-500 dark:hover:text-gray-300">
                 <Link
                   href="/favorieten"
                   onClick={() => setOpenMobile(false)}
                   className="flex items-center"
                 >
-                  <Library className="mr-4 text-gray-800 dark:text-gray-300" />
+                  <Library className="mr-4 text-gray-800 dark:text-white" />
                   Favorieten
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem className="py-2">
-              <SidebarMenuButton className="flex items-center">
+              <SidebarMenuButton className="flex items-center hover:text-gray-500 dark:hover:text-gray-300">
                 <Link
                   href="/contact"
                   onClick={() => setOpenMobile(false)}
                   className="flex items-center"
                 >
-                  <Phone className="mr-4 text-gray-800 dark:text-gray-300" />
+                  <Phone className="mr-4 text-gray-800 dark:text-white" />
                   Contact
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem className="py-2">
-              <SidebarMenuButton className="flex items-center">
+              <SidebarMenuButton className="flex items-center hover:text-gray-500 dark:hover:text-gray-300">
                 <Link
                   href="/help"
                   onClick={() => setOpenMobile(false)}
                   className="flex items-center"
                 >
-                  <HelpCircleIcon className="mr-4 text-gray-800 dark:text-gray-300" />
+                  <HelpCircleIcon className="mr-4 text-gray-800 dark:text-white" />
                   Help
                 </Link>
               </SidebarMenuButton>
