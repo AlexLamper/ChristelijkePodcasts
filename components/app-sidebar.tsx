@@ -23,7 +23,7 @@ export function AppSidebar() {
         <SidebarHeader>
           <div className="px-6 pt-6">
             <Link href="/">
-              <h1 className="text-3xl font-bold text-green-500">Christelijke</h1>
+              <h1 className="text-3xl font-bold text-green-600 dark:text-green-500">Christelijke</h1>
             </Link>
             <p className="text-sm text-gray-400 dark:text-gray-500">Podcasts</p>
           </div>
